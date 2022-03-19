@@ -1,0 +1,35 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: inherit;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+input {
+    font-size: initial;
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(167, 165, 165);
+    border-radius: 16px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(94, 92, 92);
+}

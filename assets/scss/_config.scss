@@ -1,0 +1,21 @@
+.month {
+    &::after {
+        
+    }
+}
+
+.monthselect,
+.yearselect {
+    display: none;
+}
+
+.daterangepicker td.active {
+    background-color: $yellow-amber-500;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.daterangepicker.show-calendar {
+    left: 0;
+}

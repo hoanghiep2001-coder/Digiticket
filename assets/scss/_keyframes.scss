@@ -1,0 +1,59 @@
+@keyframes openDropdown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    } to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes closeDropdown {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    } to {
+        transform: translateY(-30px);
+        opacity : 0;
+    }
+}
+
+@keyframes showNextProductPage{
+    from {
+        transform: translateX(30px);
+        opacity: .8;
+    } to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(-10px);
+        opacity: .8;
+    } to {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+// @keyframes openMobileMenu {
+//     from {
+//         transform: translateY(-30px);
+//         opacity: .8
+//     } to {
+//         transform: translateY(0);
+//         opacity: 1
+//     }
+// }
+
+// @keyframes closeMobileMenu {
+//     from {
+//         transform: translateY(0);
+//         opacity: 1
+//     } to {
+//         transform: translateY(-30px);
+//         opacity: 0
+//     }
+// }

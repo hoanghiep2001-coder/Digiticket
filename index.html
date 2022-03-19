@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="icon" href="./assets/img/Logo/Group 12854 1.svg">
+    <link rel="stylesheet" href="./fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="./themify-icons/themify-icons.css">
+    <title>Digiticket</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="header__container grid wide hide-on-mobile hide-on-tablet">
+                <!-- logo -->
+                <div class="header-logo">
+                    <a href="#">
+                        <img src="./assets/img/Logo.png" alt="" />
+                    </a>
+                </div>
+                <!-- search Bar -->
+                <div class="header-search-Bar">
+                    <input placeholder="Tìm kiếm trên Digiticket" type="text" class="header-with-search" />
+                    <i class="ti-search"></i>
+                </div>
+                <div class="header-user">
+                    <!-- account -->
+                    <div class="header-account">
+                        <div class="header-account-assets">
+                            <p>Tài khoản</p>
+                            <a href="#">Đăng ký / Đăng nhập</a>
+                        </div>
+                    </div>
+                    <!-- cart -->
+                    <div class="header-cart">
+                        <i class="ti-shopping-cart">
+                            <p>0</p>
+                        </i>
+                        <p>Giỏ hàng</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu bar -->
+            <div class="header__subnav hide-on-mobile hide-on-tablet">
+                <div class="header__subnav-container grid wide">
+                    <div class="header__subnav-container-bars">
+                        <i class="ti-list">
+                            <ul class="header__subnav-container-bars-list js-open-subnav">
+                                <li class="header__subnav-container-bars-list-item js-drop-right">
+                                    <p>Lưu trú</p>
+                                    <i class="ti-angle-right"></i>
+                                    <ul class="header__subnav-container-bars-list-item-sub-ul js-content-drop-right">
+                                        <li class="
+                          header__subnav-container-bars-list-item-sub-ul-li
+                        ">
+                                            Khách sạn /Resort
+                                        </li>
+                                        <li class="
+                          header__subnav-container-bars-list-item-sub-ul-li
+                        ">
+                                            Villa/Căn hộ
+                                        </li>
+                                        <li class="
+                          header__subnav-container-bars-list-item-sub-ul-li
+                        ">
+                                            Du thuyền
+                                        </li>
+                                        <li class="
+                          header__subnav-container-bars-list-item-sub-ul-li
+                        ">
+                                            Homestay
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="header__subnav-container-bars-list-item js-drop-right">
+                                    <p>Giải trí</p>
+                                    <i class="ti-angle-right"></i>
+                                    <ul class="header__subnav-container-bars-list-item-sub-ul js-content-drop-right">
+                                        <li class="
+                              header__subnav-container-bars-list-item-sub-ul-li
+                            ">
+                                            Xem phim
+                                        </li>
+                                        <li class="
+                              header__subnav-container-bars-list-item-sub-ul-li
+                            ">
+                                            Địa điểm vui chơi
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="header__subnav-container-bars-list-item js-drop-right">
+                                    <p>Tham quan</p>
+                                    <i class="ti-angle-right"></i>
+                                    <ul class="header__subnav-container-bars-list-item-sub-ul js-content-drop-right">
+                                        <li class="
+                          header__subnav-container-bars-list-item-sub-ul-li
+                        ">
+                                            Địa điểm tham quan
+                                        </li>
+                                        <li class="
+                          header__subnav-container-bars-list-item-sub-ul-li
+                        ">
+                                            Tour
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="header__subnav-container-bars-list-item js-drop-right">
+                                    <p>Nghệ thuật</p>
+                                    <i class="ti-angle-right"></i>
+                                    <ul class="header__subnav-container-bars-list-item-sub-ul js-content-drop-right">
+                                        <li class="
+                          header__subnav-container-bars-list-item-sub-ul-li
+                        ">
+                                            Show ca nhạc
+                                        </li>
+                                        <li class="
+                          header__subnav-container-bars-list-item-sub-ul-li
+                        ">
+                                            Sân khấu nghệ thuật
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="header__subnav-container-bars-list-item js-drop-right">
+                                    <p>Thể thao</p>
+                                    <i class="ti-angle-right"></i>
+                                    <ul class="header__subnav-container-bars-list-item-sub-ul js-content-drop-right">
+                                        <li class="
+                          header__subnav-container-bars-list-item-sub-ul-li
+                        ">
+                                            Bóng đá
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="header__subnav-container-bars-list-item js-drop-right">
+                                    <p>Di chuyển</p>
+                                    <i class="ti-angle-right"></i>
+                                    <ul class="header__subnav-container-bars-list-item-sub-ul js-content-drop-right">
+                                        <li class="
+                          header__subnav-container-bars-list-item-sub-ul-li
+                        ">
+                                            Máy bay
+                                        </li>
+                                        <li class="
+                          header__subnav-container-bars-list-item-sub-ul-li
+                        ">
+                                            Ô tô </li>
+                                        <li class="
+                          header__subnav-container-bars-list-item-sub-ul-li
+                        ">
+                                            Tàu thủy </li>
+                                        <li class="
+                          header__subnav-container-bars-list-item-sub-ul-li
+                        ">
+                                            Tàu hỏa </li>
+                                    </ul>
+                                </li>
+                                <li class="header__subnav-container-bars-list-item js-drop-right">
+                                    <p>Combo</p>
+                                    <i class="ti-angle-right"></i>
+                                    <ul class="header__subnav-container-bars-list-item-sub-ul js-content-drop-right">
+                                        <li class="
+                          header__subnav-container-bars-list-item-sub-ul-li
+                        ">
+                                            Combo du lịch
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="header__subnav-container-bars-list-item js-drop-right">
+                                    <p>Ẩm thực</p>
+                                    <i class="ti-angle-right"></i>
+                                    <ul class="header__subnav-container-bars-list-item-sub-ul js-content-drop-right">
+                                        <li class="
+                          header__subnav-container-bars-list-item-sub-ul-li
+                        ">
+                                            Đồ ăn
+                                        </li>
+                                        <li class="
+                          header__subnav-container-bars-list-item-sub-ul-li
+                        ">
+                                            Đồ uống
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </i>
+                        <h3>DANH MỤC DỊCH VỤ</h3>
+                    </div>
+                    <div class="header__subnav-container-check">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>1900 252580</h3>
+                        <button class="header__subnav-container-check-button js-check-button">
+                            KIỂM TRA ĐƠN HÀNG
+                            <div class="header__subnav-container-check-button-form js-check-form">
+                                <h3>Kiểm tra đơn hàng</h3>
+                                <div class="header__subnav-container-check-button-form-div">
+                                    <label for="">Vui lòng nhập số điện thoại</label>
+                                    <input placeholder="Số điện thoại" type="text"
+                                        class="header__subnav-container-check-button-form-input">
+                                </div>
+                                <div class="header__subnav-container-check-button-form-div">
+                                    <label for="">Vui lòng nhập email</label>
+                                    <input placeholder="Email" type="text"
+                                        class="header__subnav-container-check-button-form-input">
+                                </div>
+                                <div class="header__subnav-container-check-button-form-div">
+                                    <label for="">Vui lòng nhập mã đơn hàng</label>
+                                    <input placeholder="VD: 0123456789" type="text"
+                                        class="header__subnav-container-check-button-form-input">
+                                </div>
+                                <p style="text-align: center;">
+                                    <a href="#" class="header__subnav-container-check-button-form-handle btn-hover">
+                                        Kiểm tra
+                                    </a>
+                                </p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tablet header -->
+            <div class="tablet hide-on-high-pc">
+                <!-- tab clicked -->
+                <div class="header__container-tablet-tab-clicked hide-on-pc grid wide">
+                    <div class="header__container-tablet-tab-clicked-search">
+                        <div class="banner-options">
+                            <!-- searching bar -->
+                            <div
+                                class="header__container-top-things-buttons-header__with-search mgr-24 tablet-search-bar">
+                                <i class="bi bi-search"></i>
+                                <input type="text" placeholder="Tìm kiếm trên Digiticket">
+                            </div>
+                        </div>
+                        <a href="#" class="selection-button header__container-tablet-tab-clicked-search-button">
+                            Tìm
+                        </a>
+                    </div>
+                    <!-- Sign in / sign up -->
+                    <div class="header__container-tablet-tab-clicked-sign">
+                        <button class="selection-button bora-4 bg-white button">
+                            <a href="#" class="link fz-16">Đăng nhập</a>
+                        </button>
+                        <button class="selection-button bora-4 bg-white button">
+                            <a href="#" class="link fz-16">Đăng ký</a>
+                        </button>
+                    </div>
+                    <div class="mgt-24">
+                        <div class="fz-16">Nhóm dịch vụ</div>
+                    </div>
+                </div>
+                <div class="header__container-tablet grid wide hide-on-pc">
+                    <div class="header__container-tablet-tab">
+                        <i class="bi bi-list mgr-12"></i>
+                        <img src="./assets/img/footer/Digiticket White.jpg" alt="">
+                    </div>
+                    <div class="header__container-tablet-cart">
+                        <i class="bi bi-cart2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="body__container">
+                <!-- hero -->
+                <div class="body__container-banner">
+                    <div class="body__container-banner-inner grid wide">
+                        <div class="body__container-banner-inner-heading">
+                            <h1>Xin chào!</h1>
+                            <h1>Bạn muốn đi đâu?</h1>
+                        </div>
+                        <div class="body__container-banner-inner-selection">
+                            <button class="selection-button banner-selection-button">Một chiều</button>
+                            <button class="selection-button banner-selection-button active">Khứ hồi</button>
+                        </div>
+
+                        <!-- options -->
+                        <div class="body__container-banner-inner-options">
+                            <!-- reach -->
+                            <div class="body__container-banner-inner-options-reach">
+                                <div
+                                    class="body__container-banner-inner-options-reach-from banner-options js-banner-options">
+                                    <img src="./assets/img/From.svg" class="mgl-18 mgr-18" alt="">
+                                    <input type="text" placeholder="Hanoi (HAN)">
+                                    <div class="banner-options-dropdown dropdown-1">
+                                        <ul class="dropdown-list js-dropdown-list1">
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div
+                                    class="body__container-banner-inner-options-reach-to banner-options js-banner-options">
+                                    <img src="./assets/img/To.svg" alt="" class="mgl-18 mgr-18">
+                                    <input type="text" placeholder="Seoul (ICN)">
+                                    <div class="banner-options-dropdown dropdown-2">
+                                        <ul class="dropdown-list js-dropdown-list2">
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- date & custommer-->
+                            <div class="body__container-banner-inner-options-date-row">
+
+                                <!-- date -->
+                                <div class="body__container-banner-inner-options-date-row-col hide-on-mobile">
+                                    <div class="banner-options row no-gutters mobile-date-options">
+                                        <div class="col l-6">
+                                            <div class="content">
+                                                <i class="bi bi-calendar-event pad-4"></i>
+                                                <input name="birthday" class="date-range-picker-leave" type="text"
+                                                    placeholder="Ngày đi">
+                                                <i class="bi bi-chevron-compact-down"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col l-6 date-range-picker-back" style="text-align: end;">
+                                            <div class="content" style="margin-left: 26.25px;">
+                                                <i class="bi bi-calendar-event pad-4"></i>
+                                                <input class="date-range-picker-back" name="birthday" type="text"
+                                                    placeholder="Ngày về">
+                                                <i class="bi bi-chevron-compact-down"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- custommer -->
+                                <div class="body__container-banner-inner-options-date-row-col hide-on-mobile">
+                                    <div class="custommer row no-gutters">
+                                        <!-- 1 item -->
+                                        <div class="item col l-4 pos-relative">
+                                            <div class="adult">
+                                                <h3>Người lớn</h3>
+                                                <span>(Trên 12 tuổi)</span>
+                                            </div>
+                                            <div class="quantity banner-options">
+                                                <input name="validate-adult" minlength="2" required type="text">
+                                                <i class="bi bi-chevron-compact-down"></i>
+                                            </div>
+                                            <!-- validate -->
+                                            <div class="validate text-error d-none not-insert">
+                                                <p>Bạn chưa nhập số lượng</p>
+                                            </div>
+                                            <div class="validate text-error d-none not-0">
+                                                <p>Số lượng không được dưới 1</p>
+                                            </div>
+                                        </div>
+                                        <!-- 1 item -->
+                                        <div class="item col l-4 pos-relative">
+                                            <div class="adult">
+                                                <h3>Trẻ em</h3>
+                                                <span>(Từ 2 đến 12 tuổi)</span>
+                                            </div>
+                                            <div class="quantity banner-options">
+                                                <input name="validate-kid" type="text" required minlength="2">
+                                                <i class="bi bi-chevron-compact-down"></i>
+                                            </div>
+                                            <!-- validate -->
+                                            <div class="validate text-error d-none not-insert">
+                                                <p>Bạn chưa nhập số lượng</p>
+                                            </div>
+                                            <div class="validate text-error d-none min-2">
+                                                <p>Số lượng tối thiểu là 2</p>
+                                            </div>
+                                        </div>
+                                        <!-- 1 item -->
+                                        <div class="item col l-4 pos-relative">
+                                            <div class="adult">
+                                                <h3>Em bé</h3>
+                                                <span>(dưới 2 tuổi)</span>
+                                            </div>
+                                            <div class="quantity banner-options">
+                                                <input type="number" required minlength="2">
+                                                <i class="bi bi-chevron-compact-down"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- book for many people -->
+                            <a class="js-open-modal" href="#" style="font-size: 1.6rem; line-height: 20px; color: #F6851D;">Đặt vé cho nhiều
+                                người?</a>
+
+                            <!-- search fly tour -->
+                            <div class="body__container-banner-inner-options-search">
+                                <a class="body__container-banner-inner-options-search-link" href="#">
+                                    TÌM CHUYẾN BAY
+                                </a>
+                            </div>
+
+                        </div>
+                        <!-- end options -->
+
+                        <!-- discover the tour -->
+                        <a href="#" style="color: #fff; font-size: 2.0rem; line-height: 24px; font-weight: 600;">
+                            Khám phá chuyến bay của bạn ngay!
+                        </a>
+
+                    </div>
+                </div>
+                <!-- end hero -->
+
+                <!-- thumbnail -->
+                <div class="body__container-thumbnail grid wide">
+                    <div class="body__container-thumbnail-row row">
+                        <div class="body__container-thumbnail-row-col col l-4 m-4 c-4 overflow-hidden">
+                            <img class="scale" src="./assets/img/thumbnail/Rectangle 5530.png" alt="">
+                        </div>
+                        <div class="body__container-thumbnail-row-col col l-4 m-4 c-4 overflow-hidden">
+                            <img class="scale" src="./assets/img/thumbnail/Rectangle 5531.png" alt="">
+                        </div>
+                        <div class="body__container-thumbnail-row-col col l-4 m-4 c-4 overflow-hidden">
+                            <img class="scale" src="./assets/img/thumbnail/Rectangle 5532.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- end thumbnail -->
+
+                <!-- Products -->
+                <div class="body__container-products grid wide">
+
+                    <!-- arrow -->
+                    <div class="body__container-products-arrow js-product-arrow">
+                        <div class="body__container-products-arrow-right">
+                            <img src="./assets/img/Products/Group 13044.svg" alt="">
+                        </div>
+                    </div>
+
+                    <!-- lead -->
+                    <div class="body__container-products-lead">
+                        <img src="./assets/img/star 3.svg" alt="" class="body__container-products-lead-star">
+                        <h2>Chào hè rực rỡ - bay ngay kẻo lỡ </h2>
+                        <img src="./assets/img/star 3.svg" alt="" class="body__container-products-lead-star">
+                    </div>
+
+                    <!-- main -->
+                    <div class="body__container-products-row">
+
+                        <div class="body__container-products-row-active js-product-page products-page1 row active">
+
+                        </div>
+                        <div class="body__container-products-row-active js-product-page products-page2 row">
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end Products -->
+
+                <!-- special places -->
+                <div class="body__container-special grid wide">
+                    <h3>ĐIỂM ĐẾN NỔI BẬT</h3>
+                    <div class="body__container-special-row row">
+                        <div class="body__container-special-row-col col l-6 m-6 c-12">
+                            <div class="row">
+                                <div style="position: relative;" class="col l-12 m-12 c-12">
+
+                                    <div class="overflow-hidden bora-10">
+                                        <img class="scale" src="./assets/img/Special Place/ngang.jpg" alt="">
+                                    </div>
+                                    <div class="inner__content">
+                                        <div class="inner__content-name">
+                                            <h3>Hà Nội</h3>
+                                        </div>
+                                        <div class="inner__content-desc">
+                                            <p>131 chặng bay</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 24px; position: relative;" class="col l-6 m-6 c-6">
+                                    <div class="overflow-hidden bora-10">
+                                        <img class="scale" src="./assets/img/Special Place/unsplash_CBXt9VT9b4A.jpg"
+                                            alt="">
+                                    </div>
+
+                                    <div class="inner__content">
+                                        <div class="inner__content-name">
+                                            <h3>Hà Nội</h3>
+                                        </div>
+                                        <div class="inner__content-desc">
+                                            <p>131 chặng bay</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 24px; position: relative;" class="col l-6 m-6 c-6">
+                                    <div class="overflow-hidden bora-10">
+                                        <img class="scale" src="./assets/img/Special Place/unsplash_HP0En6B1Db8.jpg"
+                                            alt="">
+                                    </div>
+
+                                    <div class="inner__content">
+                                        <div class="inner__content-name">
+                                            <h3>Hà Nội</h3>
+                                        </div>
+                                        <div class="inner__content-desc">
+                                            <p>131 chặng bay</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="position: relative;" class="body__container-special-row-col col l-3 m-3 c-6">
+                            <div class="overflow-hidden bora-10">
+                                <img class="scale" src="./assets/img/Special Place/doc to.jpg" alt="">
+                            </div>
+
+                            <div class="inner__content">
+                                <div class="inner__content-name">
+                                    <h3>Hà Nội</h3>
+                                </div>
+                                <div class="inner__content-desc">
+                                    <p>131 chặng bay</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body__container-special-row-col col l-3 m-3 c-6">
+                            <div class="row">
+                                <div style="position: relative;" class="col l-12 m-12 c-12">
+                                    <div class="overflow-hidden bora-10">
+                                        <img class="scale" src="./assets/img/Special Place/unsplash_l5OJXaWz2cQ.jpg"
+                                            alt="">
+                                    </div>
+
+                                    <div class="inner__content">
+                                        <div class="inner__content-name">
+                                            <h3>Hà Nội</h3>
+                                        </div>
+                                        <div class="inner__content-desc">
+                                            <p>131 chặng bay</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 24px; position: relative;" class="col l-12 m-12 c-12">
+                                    <div class="overflow-hidden bora-10">
+                                        <img class="scale" src="./assets/img/Special Place/unsplash_Yg64tDZyQHY.jpg"
+                                            alt="">
+                                    </div>
+
+                                    <div class="inner__content">
+                                        <div class="inner__content-name">
+                                            <h3>Hà Nội</h3>
+                                        </div>
+                                        <div class="inner__content-desc">
+                                            <p>131 chặng bay</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end special places -->
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer__container grid wide">
+                <div class="footer__container-row row">
+                    <div class="footer__container-col col l-3 m-3 c-12">
+                        <img src="./assets/img/Logo/Digiticket White.png" alt="" />
+                        <p class="footer__container-display-flex">
+                            <i class="footer-icon ti-email"></i>
+                            <a href="#">booking@digiticket.vn</a>
+                        </p>
+                        <p class="footer__container-display-flex">
+                            <i class="footer-icon fas fa-phone-alt"></i>
+                            <span>1900 252580</span>
+                        </p>
+                    </div>
+                    <div class="footer__container-col col l-2 m-3 c-12">
+                        <h3>Về digiticket</h3>
+                        <ul class="footer__container-col-list">
+                            <li class="footer__container-col-list-item">Giới thiệu</li>
+                            <li class="footer__container-col-list-item">
+                                Chính sách bảo mật thông tin
+                            </li>
+                            <li class="footer__container-col-list-item">
+                                Cơ chế giải quyết tranh chấp
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__container-col col l-2 m-4 c-12">
+                        <h3>Chăm sóc khách hàng</h3>
+                        <ul class="footer__container-col-list">
+                            <li class="footer__container-col-list-item">
+                                Hướng dẫn đặt hàng
+                            </li>
+                            <li class="footer__container-col-list-item">
+                                Hướng dẫn thanh toán
+                            </li>
+                            <li class="footer__container-col-list-item">
+                                Chăm sóc khách hàng
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__container-col col l-2 m-2 c-12">
+                        <h3>Digi Blog</h3>
+                        <ul class="footer__container-col-list">
+                            <li class="footer__container-col-list-item">Blog Ẩm thực</li>
+                            <li class="footer__container-col-list-item">Blog Du lịch</li>
+                            <li class="footer__container-col-list-item">Blog Địa điểm</li>
+                        </ul>
+                    </div>
+                    <div class="footer__container-col col l-3 m-5 c-12">
+                        <h3>Đăng ký nhận khuyến mại</h3>
+                        <div class="footer__container-col-form">
+                            <input placeholder="Nhập email" type="text" class="footer__container-col-email" />
+                            <button class="footer__container-col-button btn-hover">Đăng ký</button>
+                        </div>
+                        <p>
+                            * Đừng bỏ lỡ hàng ngàn sản phẩm và chương trình siêu hấp dẫn sẽ được gửi trực tiếp đến email
+                            của bạn
+                        </p>
+                        <i class="Sign-icon ti-facebook"></i>
+                        <i class="Sign-icon ti-instagram"></i>
+                    </div>
+                </div>
+                <div style="margin-top: 36px" class="footer-clear-fix"></div>
+                <div class="footer__ending grid wide">
+                    <h3>
+                        © 2020 - Bản quyền thuộc CÔNG TY TNHH MỘT THÀNH VIÊN SÀN GIAO DỊCH DIGITICKET
+                    </h3>
+                    <div class="footer__ending-content">
+                        <div class="footer__ending-content-left">
+                            <p>
+                                Giấy chứng nhận Đăng Ký Kinh Doanh số 0109287103, cấp ngày 30/07/2020 tại Sở Kế hoạch
+                                Đầu tư Hà Nội
+                            </p>
+                            <p>
+                                Địa chỉ: Số 34 Hàng Bè, Phường Hàng Bạc, Quận Hoàn Kiếm, Thành phố Hà Nội
+                            </p>
+                        </div>
+                        <div class="footer__ending-content-right">
+                            <img src="./assets/img/footer/logo.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal -->
+        <div class="modal js-modal">
+            <div class="modal__overlay">
+
+            </div>
+            <div class="modal__body js-modal-body">
+                <div class="container__book-info grid wide bora-10">
+                    <div class="heading">
+                        <div class="leading">
+                            <h3>NHẬP THÔNG TIN ĐẶT VÉ</h3>
+                            <p>Vui lòng để lại thông tin, chúng tôi sẽ hỗ trợ bạn tìm kiếm chuyến bay phù hợp nhất!</p>
+                        </div>
+                        <div class="close">
+                            <img class="js-close-modal" src="./assets/img/modal/x.svg" alt="">
+                        </div>
+                    </div>
+                    <!-- hero -->
+                    <div class="body__container-banner h-auto">
+                        <div class="body__container-banner-inner h-auto grid wide pad-top-0">
+                            
+                            <div class="body__container-banner-inner-selection modal-selection">
+                                <button class="selection-button active modal-selection-button">Khứ hồi</button>
+                                <button class="selection-button modal-selection-button">Một chiều</button>
+                            </div>
+
+                            <!-- options -->
+                            <div class="body__container-banner-inner-options pad-0">
+                                <!-- reach -->
+                                <div class="body__container-banner-inner-options-reach">
+                                    <div
+                                        class="body__container-banner-inner-options-reach-from banner-options js-banner-options">
+                                        <img src="./assets/img/From.svg" class="mgl-18 mgr-18" alt="">
+                                        <input type="text" placeholder="Hanoi (HAN)">
+                                        <div class="banner-options-dropdown dropdown-1">
+                                            <ul class="dropdown-list js-dropdown-list1">
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="body__container-banner-inner-options-reach-to banner-options js-banner-options">
+                                        <img src="./assets/img/To.svg" alt="" class="mgl-18 mgr-18">
+                                        <input type="text" placeholder="Seoul (ICN)">
+                                        <div class="banner-options-dropdown dropdown-2">
+                                            <ul class="dropdown-list js-dropdown-list2">
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- date & custommer-->
+                                <div class="body__container-banner-inner-options-date-row mgb-28">
+
+                                    <!-- date -->
+                                    <div class="body__container-banner-inner-options-date-row-col hide-on-mobile">
+                                        <div class="banner-options row no-gutters mobile-date-options">
+                                            <div class="col l-6">
+                                                <div class="content">
+                                                    <i class="bi bi-calendar-event pad-4"></i>
+                                                    <input name="birthday" class="date-range-picker-leave" type="text"
+                                                        placeholder="Ngày đi">
+                                                    <i class="bi bi-chevron-compact-down"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col l-6 date-range-picker-back" style="text-align: end;">
+                                                <div class="content" style="margin-left: 26.25px;">
+                                                    <i class="bi bi-calendar-event pad-4"></i>
+                                                    <input class="date-range-picker-back" name="birthday" type="text"
+                                                        placeholder="Ngày về">
+                                                    <i class="bi bi-chevron-compact-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- custommer -->
+                                    <div class="body__container-banner-inner-options-date-row-col hide-on-mobile">
+                                        <div class="custommer row no-gutters">
+                                            <!-- 1 item -->
+                                            <div class="item col l-4 pos-relative">
+                                                <div class="adult">
+                                                    <h3>Người lớn</h3>
+                                                    <span>(Trên 12 tuổi)</span>
+                                                </div>
+                                                <div class="quantity banner-options">
+                                                    <input name="validate-adult" minlength="2" required type="text">
+                                                    <i class="bi bi-chevron-compact-down"></i>
+                                                </div>
+                                                <!-- validate -->
+                                                <div class="validate text-error d-none not-insert">
+                                                    <p>Bạn chưa nhập số lượng</p>
+                                                </div>
+                                                <div class="validate text-error d-none not-0">
+                                                    <p>Số lượng không được dưới 1</p>
+                                                </div>
+                                            </div>
+                                            <!-- 1 item -->
+                                            <div class="item col l-4 pos-relative">
+                                                <div class="adult">
+                                                    <h3>Trẻ em</h3>
+                                                    <span>(Từ 2 đến 12 tuổi)</span>
+                                                </div>
+                                                <div class="quantity banner-options">
+                                                    <input name="validate-kid" type="text" required minlength="2">
+                                                    <i class="bi bi-chevron-compact-down"></i>
+                                                </div>
+                                                <!-- validate -->
+                                                <div class="validate text-error d-none not-insert">
+                                                    <p>Bạn chưa nhập số lượng</p>
+                                                </div>
+                                                <div class="validate text-error d-none min-2">
+                                                    <p>Số lượng tối thiểu là 2</p>
+                                                </div>
+                                            </div>
+                                            <!-- 1 item -->
+                                            <div class="item col l-4 pos-relative"  >
+                                                <div class="adult">
+                                                    <h3>Em bé</h3>
+                                                    <span>(dưới 2 tuổi)</span>
+                                                </div>
+                                                <div class="quantity banner-options">
+                                                    <input type="number" required minlength="2">
+                                                    <i class="bi bi-chevron-compact-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- upload file -->
+                    <div class="upload">
+                        <div class="text">
+                            <h6 class="ta-start">Vui lòng đính kèm file thông tin chi tiết hành khách (word, excel).</h6>
+                            <p class="ta-start">Thông tin chi tiết bao gồm: Họ tên (đầy đủ theo CMND/Hộ chiếu), giới tính, ngày tháng năm sinh, khối lượng hành lý mang theo.</p>
+                        </div>
+                        <div class="button">
+                            <img src="./assets/img/modal/upload-cloud.svg" alt="">
+                            <input type="file" class="upload-file" title="" required>
+                        </div>
+                    </div>
+
+                    <!-- info customer -->
+                    <div class="info-customer">
+                        <h4>Thông tin người đặt vé</h4>
+                        <p>Digiticket sẽ thông báo kết quả theo thông tin liên hệ của người đặt vé</p>
+                        <div class="d-flex">
+                            <div class="field">
+                                <img src="./assets/img/modal/user.svg" alt="" class="icon">
+                                <input type="text" class="customer">
+                            </div>
+                            <div class="filed">
+                                <img src="./assets/img/modal/mail.svg" alt="">
+                                <input type="text" class="customer">
+                            </div>
+                            <div class="filed">
+                                <img src="./assets/img/modal/Vector.svg" alt="">
+                                <input type="text" class="customer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/mobile.js"></script>
+    <script src="./assets/js/config.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,398 @@
+
+/* header CSS */
+
+.header {
+    background-color: #ffcb3e;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99999;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 76px;
+}
+
+
+/* logo */
+
+.header-logo img {
+    width: 185px;
+    height: 36px;
+}
+
+
+/* search Bar */
+
+.header-search-Bar {
+    width: 633px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    height: 40px;
+    padding-left: 12px;
+    background-color: #fff;
+}
+
+.header-search-Bar .header-with-search {
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    color: $grey-500;
+}
+
+.header-search-Bar .header-with-search::placeholder {
+    color: $grey-400;
+    font-weight: 500;
+}
+
+.header-search-Bar .ti-search {
+    font-size: 24px;
+    color: $yellow-amber-400;
+    cursor: pointer;
+    font-weight: 700;
+    padding-right: 12px;
+}
+
+
+/* user */
+
+.header-user {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    justify-content: space-between;
+}
+
+.header-account {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.header-account img {
+    width: 40px;
+    height: 40px;
+}
+
+.header-account .header-account-assets {
+    margin-left: 10px;
+}
+
+.header-account .header-account-assets a {
+    margin-top: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 700;
+    display: block;
+    color: var(--link-color);
+}
+
+.header-user .header-cart {
+    display: flex;
+    align-items: flex-end;
+}
+
+.header-user .header-cart .ti-shopping-cart {
+    font-size: 24px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.header-user .header-cart .ti-shopping-cart p {
+    position: absolute;
+    background-color: #ffe6a3;
+    top: -10px;
+    right: -15px;
+    width: 17px;
+    height: 17px;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 50%;
+    font-size: 13px;
+}
+
+.header-user .header-cart p {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* header Subnav */
+
+.header__subnav {
+    background-color: #fffbd2;
+    height: 28px;
+    font-size: 12px;
+}
+
+.header__subnav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 28px;
+}
+
+.header__subnav-container-check,
+.header__subnav-container-bars {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header__subnav-container-bars .ti-list {
+    font-size: 18px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.header__subnav-container-check {
+    font-size: 12px;
+}
+
+.header__subnav-container-check .fa-phone-alt {
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.header__subnav-container-check h3 {
+    cursor: pointer;
+    position: relative;
+}
+
+.header__subnav-container-check-button {
+    background-color: $yellow-amber-400;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 12px;
+    margin-left: 16px;
+    cursor: pointer;
+    position: relative;
+    line-height: 20px;
+}
+
+
+/* check đơn hàng dropdown */
+
+.header__subnav-container-check-button-form {
+    position: absolute;
+    top: 22px;
+    right: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    min-width: 240px;
+    padding: 16px;
+    text-align: start;
+    display: none;
+    box-shadow: 1px 1px 5px rgb(0 0 0 / 20%);
+}
+
+.header__subnav-container-check-button-form.open {
+    display: block;
+}
+
+.header__subnav-container-check-button-form h3 {
+    color: $yellow-amber-400;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.header__subnav-container-check-button-form-div {
+    margin-bottom: 16px;
+}
+
+.header__subnav-container-check-button-form-input {
+    margin: 8px 0 0;
+    padding: 6px 12px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #D6D9DB;
+    border-radius: 4px;
+    color: #717981;
+    font-weight: 500;
+}
+
+.header__subnav-container-check-button-form-input::placeholder {
+    color: #717981;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.header__subnav-container-check-button-form-handle {
+    display: block;
+    background-color: #ffbe0f;
+    color: var(--link-color);
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 0;
+}
+
+
+/* kết thúc check đơn hàng */
+
+.header__subnav-container-bars-list {
+    position: absolute;
+    min-width: 160px;
+    margin-top: 7px;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px rgb(0 0 0 / 10%);
+    display: none;
+    z-index: 999;
+}
+
+.header__subnav-container-bars-list.open {
+    display: block;
+}
+
+.header__subnav-container-bars-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 2px 4px 8px;
+    font-size: 14px;
+    min-height: 36px;
+    position: relative;
+}
+
+.header__subnav-container-bars-list-item:hover {
+    background-color: $yellow-amber-400;
+}
+
+.header__subnav-container-bars-list-item .ti-angle-right {
+    font-size: 10px;
+}
+
+
+/* sub ul */
+
+.header__subnav-container-bars-list-item-sub-ul {
+    position: absolute;
+    top: 0;
+    right: -162px;
+    background-color: #fff;
+    display: none;
+}
+
+.header__subnav-container-bars-list-item:hover .header__subnav-container-bars-list-item-sub-ul {
+    display: block;
+}
+
+.header__subnav-container-bars-list-item-sub-ul-li {
+    min-height: 36px;
+    font-size: 14px;
+    padding: 4px 2px 4px 8px;
+    line-height: 25px;
+    min-width: 160px;
+    position: relative;
+}
+
+.header__subnav-container-bars-list-item-sub-ul-li::after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 100%;
+    left: -10px;
+    top: 0;
+}
+
+.header__subnav-container-bars-list-item-sub-ul-li:hover {
+    background-color: $yellow-amber-400;
+}
+
+/* ----- Header mobile --------- */
+.header__container-tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    height: 48px;
+    &-cart {
+        & i {
+            font-size: 30px;
+        }
+    }
+    &-tab {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & i {
+            font-size: 26px;
+            font-weight: 700;
+        }
+        &-logo {
+            & img {
+                width: 152px;
+                height: 100%;
+            }
+        }
+    }
+    &-tab-clicked {
+        position: absolute;
+        max-height: 792px;
+        top: 48px;
+        background-color: #fff;
+        width: 100%;
+        padding: 16px;
+        // display: none;
+        &-search {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            & i {
+                font-size: 16px;
+                margin-right: 0;
+                padding: 16px;
+            }
+            &-button {
+                background-color: $yellow-amber-400;
+                border-radius: 4px;
+            }
+            & .tablet-search-bar {
+                line-height: 36px;
+            }
+        }
+        &-sign {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            margin-top: 36px;
+            & .button {
+                border: 1px solid $yellow-amber-400;
+                height: 36px;
+                line-height: 36px;
+                padding: 0 52px;
+                max-width: 183px;
+                &:nth-child(2) {
+                    background-color: $yellow-amber-400;
+                    padding: 0 61px;
+                }
+                & a {
+                    color: #000;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+.header__container-tablet-tab-clicked-search .banner-options {
+    height: 36px;
+    padding: 0 20px 0 0;
+}
+
+.tablet-search-bar {
+    & input {
+        outline: none;
+        border: none;
+    }
+}
