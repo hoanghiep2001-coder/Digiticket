@@ -1,8 +1,9 @@
-var bannerOptions = document.querySelectorAll(".js-banner-options");
+const bannerOptions = document.querySelectorAll(".js-banner-options");
 const bannerOptionsDropdown = document.querySelectorAll('.banner-options-dropdown')
-var dropDownList1 = document.querySelector(".js-dropdown-list1");
-var dropDownList2 = document.querySelector(".js-dropdown-list2");
-var body = document.querySelector(".body");
+const dropDownList = document.querySelectorAll('.dropdown-list')
+const htmll = document.querySelector('html')
+
+const body = document.querySelector(".body");
 
 // header dropdown
 const headerBar = document.querySelector('.header__subnav-container-bars')
@@ -15,11 +16,9 @@ const openCheckForm = document.querySelector('.js-check-form')
 const bannerSelectionButtons = document.querySelectorAll('.banner-selection-button')
 
 // Validate
-const adultForm = document.querySelector('input[name="validate-adult"]')  
-const kidForm = document.querySelector('input[name="validate-kid"]')  
-const validateAdultFormNot0 = document.querySelector('.d-none.not-0')
-const validateAdultFormNot = document.querySelector('.d-none.not-insert')
-const validateKidFormMin2 = document.querySelector('.d-none.min-2')
+const validateForm = document.querySelectorAll('input[name="validate"]')
+const excuteNot0 = document.querySelectorAll('.d-none.not-0')
+const excuteNotInsert = document.querySelectorAll('.d-none.not-insert')
 
 // products
 const productPage1 = document.querySelector('.products-page1')
@@ -260,11 +259,8 @@ var app = {
   render: function () {
     const _this = this
 
-    // render Dropdown 1
-    this.renderDropDown1()
-
-    // render Dropdown 2
-    this.renderDropDown2()
+    // render banner Dropdown 
+    this.renderBannerDropDown()
 
     // render Places page 1
     this.renderPlacesPage1()
@@ -274,10 +270,6 @@ var app = {
   },
   handleEvent: function () {
     var _this = this;
-
-    var dropDownItems = document.querySelectorAll(".dropdown-item");
-    var Dropdown1 = document.querySelector(".dropdown-1");
-    var Dropdown2 = document.querySelector(".dropdown-2");
 
     // open subnav khi click vao bar
     headerBar.onclick = function() {
@@ -290,12 +282,10 @@ var app = {
     }
 
     // ket thuc cac su kien open dropdown, open form...
-    body.onclick = function() {
-      headerSubnav.classList.remove('open')
-      openCheckForm.classList.remove('open')
-      Dropdown1.classList.remove('open')
-      Dropdown2.classList.remove('open')
-    }
+      body.onclick = function() {
+        headerSubnav.classList.remove('open')
+        openCheckForm.classList.remove('open')
+      }
 
     // khi click vao dia diem se active border
     bannerOptions.forEach((element, index) => {
@@ -338,16 +328,31 @@ var app = {
     }
 
     // validate form khi co value nhap vao
-    adultForm.onkeypress = function (e) {
-      if (e.code == "Enter") {
-        _this.validate()
+    validateForm.forEach((item, index) => {
+
+      const error1 = excuteNot0[index]
+      const error2 = excuteNotInsert[index]
+
+      item.onkeypress = function (e) {
+        if (e.code == "Enter") {
+          const formValue = this.value
+          
+          if(formValue == '0') {
+            error1.classList.add('d-block')
+            error2.classList.remove('d-block')
+          } else {
+            error1.classList.remove('d-block')
+          } 
+
+          if(formValue == '') {
+            error2.classList.add('d-block')
+            error1.classList.remove('d-block')
+          } else {
+            error2.classList.remove('d-block')
+          }
+        }
       }
-    }
-    kidForm.onkeypress = function(e) {
-      if (e.code == "Enter") {
-        _this.validate()
-      }
-    }
+    })
 
     // xoa đuôi đi sau của input file
     document.addEventListener('DOMContentLoad', myFunction);
@@ -363,9 +368,12 @@ var app = {
       modal.classList.add('open')
     }
 
-    modalBody.onclick = function(e) {
-      e.stopPropagation()
-    }
+    bannerOptionsDropdown.forEach(item => {
+      modalBody.onclick = function(e) {
+        e.stopPropagation()
+        item.classList.remove('open')
+      }
+    })
 
     // close modal
     modalOverlay.onclick = function() {
@@ -388,28 +396,19 @@ var app = {
 
 
   },
-  renderDropDown1() {
-    var placeDropDown1 = this.from.map((item, index) => {
-      return `
-                <li class="dropdown-item">
-                    <h3>${item.cityName}</h3>
-                    <p>${item.desc}</p>
-                </li>
-                `;
-    });
-    dropDownList1.innerHTML = placeDropDown1.join("");
+  renderBannerDropDown() {
+    dropDownList.forEach(list => {
+      const placeDropDown = this.from.map(item => {
+        return `
+                  <li class="dropdown-item">
+                      <h3>${item.cityName}</h3>
+                      <p>${item.desc}</p>
+                  </li>
+                  `;
+      })
 
-  },
-  renderDropDown2() {
-    var placeDropDown2 = this.to.map((item, index) => {
-      return `
-                <li class="dropdown-item">
-                    <h3>${item.cityName}</h3>
-                    <p>${item.desc}</p>
-                </li>
-                `;
-    });
-    dropDownList2.innerHTML = placeDropDown2.join("");
+      list.innerHTML = placeDropDown.join("")
+    })
   },
   renderPlacesPage1() {
        // render Products
@@ -526,37 +525,6 @@ var app = {
       }
     })
   },
-  validate: function () {
-
-    const adultFormValue = adultForm.value
-
-    if (adultFormValue == '0') {
-      validateAdultFormNot0.classList.remove('d-none')
-      validateAdultFormNot0.classList.add('d-block')
-    } else {
-      validateAdultFormNot0.classList.add('d-none')
-      validateAdultFormNot0.classList.remove('d-block')
-    }
-
-   if (adultFormValue == '') {
-        validateAdultFormNot.classList.remove('d-none')
-        validateAdultFormNot.classList.add('d-block')
-      } else {
-        validateAdultFormNot.classList.add('d-none')
-        validateAdultFormNot.classList.remove('d-block')
-      }
-  },
-  validateKid : function() {
-    const kidFormValue = kidForm.value
-
-    if (kidFormValue < 2) { 
-      validateKidFormMin2.classList.remove('d-none')
-      validateKidFormMin2.classList.add('d-block')
-    } else {
-      validateKidFormMin2.classList.add('d-none')
-      validateKidFormMin2.classList.remove('d-block')
-    }
-  },  
   start: function (param) {
     this.render();
     this.handleEvent();
