@@ -25,7 +25,7 @@
 <body>
     <div class="wrapper">
         <div class="header">
-            <div class="header__container grid wide hide-on-mobile hide-on-tablet">
+            <div class="header__container grid wide hide-on-mobile">
                 <!-- logo -->
                 <div class="header-logo">
                     <a href="#">
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <!-- Menu bar -->
-            <div class="header__subnav hide-on-mobile hide-on-tablet">
+            <div class="header__subnav hide-on-mobile">
                 <div class="header__subnav-container grid wide">
                     <div class="header__subnav-container-bars">
                         <i class="ti-list">
@@ -233,9 +233,9 @@
             </div>
 
             <!-- tablet header -->
-            <div class="tablet hide-on-high-pc">
+            <div class="tablet hide-on-high-pc hide-on-tablet">
                 <!-- tab clicked -->
-                <div class="header__container-tablet-tab-clicked hide-on-pc grid wide">
+                <div class="header__container-tablet-tab-clicked  hide-on-pc grid wide">
                     <div class="header__container-tablet-tab-clicked-search">
                         <div class="banner-options">
                             <!-- searching bar -->
@@ -314,10 +314,10 @@
                             </div>
 
                             <!-- date & custommer-->
-                            <div class="body__container-banner-inner-options-date-row">
+                            <div class="body__container-banner-inner-options-date-row hide-on-tablet">
 
                                 <!-- date -->
-                                <div class="body__container-banner-inner-options-date-row-col hide-on-mobile">
+                                <div class="body__container-banner-inner-options-date-row-col hide-on-tablet">
                                     <div class="banner-options row no-gutters mobile-date-options">
                                         <div class="col l-6">
                                             <div class="content">
@@ -338,54 +338,59 @@
                                     </div>
                                 </div>
 
-                                <!-- custommer -->
-                                <div class="body__container-banner-inner-options-date-row-col hide-on-mobile">
-                                    <div class="custommer row no-gutters">
-                                        <!-- 1 item -->
-                                        <div class="item col l-4 pos-relative">
-                                            <div class="adult">
-                                                <h3>Người lớn</h3>
-                                                <span>(Trên 12 tuổi)</span>
-                                            </div>
-                                            <div class="quantity banner-options">
-                                                <input name="validate-adult" minlength="2" required type="text">
-                                                <i class="bi bi-chevron-compact-down"></i>
-                                            </div>
-                                            <!-- validate -->
-                                            <div class="validate text-error d-none not-insert">
-                                                <p>Bạn chưa nhập số lượng</p>
-                                            </div>
-                                            <div class="validate text-error d-none not-0">
-                                                <p>Số lượng không được dưới 1</p>
-                                            </div>
-                                        </div>
-                                        <!-- 1 item -->
-                                        <div class="item col l-4 pos-relative">
-                                            <div class="adult">
-                                                <h3>Trẻ em</h3>
-                                                <span>(Từ 2 đến 12 tuổi)</span>
-                                            </div>
-                                            <div class="quantity banner-options">
-                                                <input name="validate-kid" type="text" required minlength="2">
-                                                <i class="bi bi-chevron-compact-down"></i>
-                                            </div>
-                                            <!-- validate -->
-                                            <div class="validate text-error d-none not-insert">
-                                                <p>Bạn chưa nhập số lượng</p>
-                                            </div>
-                                            <div class="validate text-error d-none min-2">
-                                                <p>Số lượng tối thiểu là 2</p>
+                                <!-- customer -->
+                                <div class="body__container-banner-inner-options-date-row-col">
+                                    <div class="row no-gutters hide-on-tablet">
+                                        <div class="col l-4">
+                                            <div class="content pos-relative">
+                                                <div class="text">
+                                                    <h3>Người lớn</h3>
+                                                    <span>(Trên 12 tuổi)</span>
+                                                </div>
+                                                <div class="quantity">
+                                                    <input name="validate" type="text" class="quantity-customer">
+                                                    <img src="./assets/img/modal/Polygon 1.svg" alt="">
+                                                </div>
+                                                <div class="validate text-error d-none not-insert">
+                                                    <p>Bạn chưa nhập số lượng</p>
+                                                </div>
+                                                <div class="validate text-error d-none not-0">
+                                                    <p>Số lượng không được dưới 1</p>
+                                                </div>
                                             </div>
                                         </div>
-                                        <!-- 1 item -->
-                                        <div class="item col l-4 pos-relative">
-                                            <div class="adult">
-                                                <h3>Em bé</h3>
-                                                <span>(dưới 2 tuổi)</span>
-                                            </div>
-                                            <div class="quantity banner-options">
-                                                <input type="number" required minlength="2">
-                                                <i class="bi bi-chevron-compact-down"></i>
+                                        <div class="col l-8">
+                                            <div class="row no-gutters">
+                                                <div class="col l-7">
+                                                    <div class="content pos-relative">
+                                                        <div class="text">
+                                                            <h3>Trẻ em</h3>
+                                                            <span>(Từ 2 đến 12 tuổi)</span>
+                                                        </div>
+                                                        <div class="quantity">
+                                                            <input name="validate" type="text" class="quantity-customer">
+                                                            <img src="./assets/img/modal/Polygon 1.svg" alt="">
+                                                        </div>
+                                                        <div class="validate text-error d-none not-insert">
+                                                            <p>Bạn chưa nhập số lượng</p>
+                                                        </div>
+                                                        <div class="validate text-error d-none not-0">
+                                                            <p>Số lượng không được dưới 1</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col l-5">
+                                                    <div class="content pos-relative">
+                                                        <div class="text">
+                                                            <h3>Em bé</h3>
+                                                            <span>(Dưới 2 tuổi)</span>
+                                                        </div>
+                                                        <div class="quantity">
+                                                            <input type="text" class="quantity-customer">
+                                                            <img src="./assets/img/modal/Polygon 1.svg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -408,7 +413,7 @@
                         <!-- end options -->
 
                         <!-- discover the tour -->
-                        <a href="#" style="color: #fff; font-size: 2.0rem; line-height: 24px; font-weight: 600;">
+                        <a class="mobile-discover-tour" href="#" style="color: #fff; font-size: 2.0rem; line-height: 24px; font-weight: 600;">
                             Khám phá chuyến bay của bạn ngay!
                         </a>
 
@@ -418,7 +423,7 @@
 
                 <!-- thumbnail -->
                 <div class="body__container-thumbnail grid wide">
-                    <div class="body__container-thumbnail-row row">
+                    <div class="body__container-thumbnail-row row hide-on-mobile">
                         <div class="body__container-thumbnail-row-col col l-4 m-4 c-4 overflow-hidden">
                             <img class="scale" src="./assets/img/thumbnail/Rectangle 5530.png" alt="">
                         </div>
@@ -427,6 +432,27 @@
                         </div>
                         <div class="body__container-thumbnail-row-col col l-4 m-4 c-4 overflow-hidden">
                             <img class="scale" src="./assets/img/thumbnail/Rectangle 5532.png" alt="">
+                        </div>
+                    </div>
+                    <div class="pad-16">
+                        <div class="overflow-hidden-default pos-relative">
+                            <div class="image-slider hide-on-pc hide-on-tablet">
+                                <div class="mobile-Slides">
+                                    <img class="mobile-slides-item scale" src="./assets/img/thumbnail/Rectangle 5530.png" alt="">
+                                </div>
+                                <div class="mobile-Slides">
+                                    <img class="mobile-slides-item scale" src="./assets/img/thumbnail/Rectangle 5531.png" alt="">
+                                </div>
+                                <div class="mobile-Slides">
+                                    <img class="mobile-slides-item scale" src="./assets/img/thumbnail/Rectangle 5532.png" alt="">
+                                </div>
+                            </div>
+                            <div class="next-button pos-absolute">
+                                <i class="bi bi-arrow-right-circle-fill"></i>
+                            </div>
+                            <div class="prev-button pos-absolute">
+                                <i class="bi bi-arrow-left-circle-fill"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -483,7 +509,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div style="margin-top: 24px; position: relative;" class="col l-6 m-6 c-6">
+                                <div class="col l-6 m-6 c-6 mgt-24 pos-relative">
                                     <div class="overflow-hidden bora-10">
                                         <img class="scale" src="./assets/img/Special Place/unsplash_CBXt9VT9b4A.jpg"
                                             alt="">
@@ -498,7 +524,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div style="margin-top: 24px; position: relative;" class="col l-6 m-6 c-6">
+                                <div  class="col l-6 m-6 c-6 mgt-24 pos-relative">
                                     <div class="overflow-hidden bora-10">
                                         <img class="scale" src="./assets/img/Special Place/unsplash_HP0En6B1Db8.jpg"
                                             alt="">
@@ -515,7 +541,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="position: relative;" class="body__container-special-row-col col l-3 m-3 c-6">
+                        <div class="body__container-special-row-col col l-3 m-3 c-6 pos-relative">
                             <div class="overflow-hidden bora-10">
                                 <img class="scale" src="./assets/img/Special Place/doc to.jpg" alt="">
                             </div>
@@ -531,7 +557,7 @@
                         </div>
                         <div class="body__container-special-row-col col l-3 m-3 c-6">
                             <div class="row">
-                                <div style="position: relative;" class="col l-12 m-12 c-12">
+                                <div class="col l-12 m-12 c-12 pos-relative">
                                     <div class="overflow-hidden bora-10">
                                         <img class="scale" src="./assets/img/Special Place/unsplash_l5OJXaWz2cQ.jpg"
                                             alt="">
@@ -546,7 +572,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div style="margin-top: 24px; position: relative;" class="col l-12 m-12 c-12">
+                                <div class="col l-12 m-12 c-12 mgt-24 pos-relative">
                                     <div class="overflow-hidden bora-10">
                                         <img class="scale" src="./assets/img/Special Place/unsplash_Yg64tDZyQHY.jpg"
                                             alt="">
@@ -572,7 +598,7 @@
 
         <div class="footer">
             <div class="footer__container grid wide">
-                <div class="footer__container-row row">
+                <div class="footer__container-row row no-gutters">
                     <div class="footer__container-col col l-3 m-3 c-12">
                         <img src="./assets/img/Logo/Digiticket White.png" alt="" />
                         <p class="footer__container-display-flex">
@@ -671,7 +697,7 @@
                         </div>
                     </div>
                     <!-- hero -->
-                    <div class="body__container-banner h-auto">
+                    <div class="body__container-banner mobile-banner-container h-auto">
                         <div class="body__container-banner-inner h-auto grid wide pad-top-0">
                             
                             <div class="body__container-banner-inner-selection modal-selection">
@@ -709,7 +735,7 @@
                                 <div class="body__container-banner-inner-options-date-row mgb-28">
 
                                     <!-- date -->
-                                    <div class="body__container-banner-inner-options-date-row-col hide-on-mobile">
+                                    <div class="body__container-banner-inner-options-date-row-col mgr-15">
                                         <div class="banner-options row no-gutters mobile-date-options">
                                             <div class="col l-6">
                                                 <div class="content">
@@ -720,7 +746,7 @@
                                                 </div>
                                             </div>
                                             <div class="col l-6 date-range-picker-back" style="text-align: end;">
-                                                <div class="content" style="margin-left: 26.25px;">
+                                                <div class="content mgl-26">
                                                     <i class="bi bi-calendar-event pad-4"></i>
                                                     <input class="date-range-picker-back" name="birthday" type="text"
                                                         placeholder="Ngày về">
@@ -731,98 +757,138 @@
                                     </div>
 
                                     <!-- custommer -->
-                                    <div class="body__container-banner-inner-options-date-row-col hide-on-mobile">
-                                        <div class="custommer row no-gutters">
-                                            <!-- 1 item -->
-                                            <div class="item col l-4 pos-relative">
-                                                <div class="adult">
-                                                    <h3>Người lớn</h3>
-                                                    <span>(Trên 12 tuổi)</span>
-                                                </div>
-                                                <div class="quantity banner-options">
-                                                    <input name="validate-adult" minlength="2" required type="text">
-                                                    <i class="bi bi-chevron-compact-down"></i>
-                                                </div>
-                                                <!-- validate -->
-                                                <div class="validate text-error d-none not-insert">
-                                                    <p>Bạn chưa nhập số lượng</p>
-                                                </div>
-                                                <div class="validate text-error d-none not-0">
-                                                    <p>Số lượng không được dưới 1</p>
-                                                </div>
-                                            </div>
-                                            <!-- 1 item -->
-                                            <div class="item col l-4 pos-relative">
-                                                <div class="adult">
-                                                    <h3>Trẻ em</h3>
-                                                    <span>(Từ 2 đến 12 tuổi)</span>
-                                                </div>
-                                                <div class="quantity banner-options">
-                                                    <input name="validate-kid" type="text" required minlength="2">
-                                                    <i class="bi bi-chevron-compact-down"></i>
-                                                </div>
-                                                <!-- validate -->
-                                                <div class="validate text-error d-none not-insert">
-                                                    <p>Bạn chưa nhập số lượng</p>
-                                                </div>
-                                                <div class="validate text-error d-none min-2">
-                                                    <p>Số lượng tối thiểu là 2</p>
+                                    <div class="body__container-banner-inner-options-date-row-col">
+                                        <div class="row no-gutters">
+                                            <div class="col l-4">
+                                                <div class="content pos-relative">
+                                                    <div class="text">
+                                                        <h3>Người lớn</h3>
+                                                        <span>(Trên 12 tuổi)</span>
+                                                    </div>
+                                                    <div class="quantity">
+                                                        <input name="validate" type="text" class="quantity-customer">
+                                                        <img src="./assets/img/modal/Polygon 1.svg" alt="">
+                                                    </div>
+                                                    <div class="validate text-error d-none not-insert">
+                                                        <p>Bạn chưa nhập số lượng</p>
+                                                    </div>
+                                                    <div class="validate text-error d-none not-0">
+                                                        <p>Số lượng không được dưới 1</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <!-- 1 item -->
-                                            <div class="item col l-4 pos-relative"  >
-                                                <div class="adult">
-                                                    <h3>Em bé</h3>
-                                                    <span>(dưới 2 tuổi)</span>
-                                                </div>
-                                                <div class="quantity banner-options">
-                                                    <input type="number" required minlength="2">
-                                                    <i class="bi bi-chevron-compact-down"></i>
+                                            <div class="col l-8">
+                                                <div class="row no-gutters">
+                                                    <div class="col l-7">
+                                                        <div class="content pos-relative">
+                                                            <div class="text">
+                                                                <h3>Trẻ em</h3>
+                                                                <span>(Từ 2 đến 12 tuổi)</span>
+                                                            </div>
+                                                            <div class="quantity">
+                                                                <input name="validate" type="text" class="quantity-customer">
+                                                                <img src="./assets/img/modal/Polygon 1.svg" alt="">
+                                                            </div>
+                                                            <div class="validate text-error d-none not-insert">
+                                                                <p>Bạn chưa nhập số lượng</p>
+                                                            </div>
+                                                            <div class="validate text-error d-none not-0">
+                                                                <p>Số lượng không được dưới 1</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col l-5">
+                                                        <div class="content pos-relative">
+                                                            <div class="text">
+                                                                <h3>Em bé</h3>
+                                                                <span>(Dưới 2 tuổi)</span>
+                                                            </div>
+                                                            <div class="quantity">
+                                                                <input type="text" class="quantity-customer">
+                                                                <img src="./assets/img/modal/Polygon 1.svg" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- upload file -->
-                    <div class="upload">
-                        <div class="text">
-                            <h6 class="ta-start">Vui lòng đính kèm file thông tin chi tiết hành khách (word, excel).</h6>
-                            <p class="ta-start">Thông tin chi tiết bao gồm: Họ tên (đầy đủ theo CMND/Hộ chiếu), giới tính, ngày tháng năm sinh, khối lượng hành lý mang theo.</p>
+                    <div class="upload-file d-flex justify-content-between">
+                        <div class="upload-file-text">
+                            <h3>Vui lòng đính kèm file thông tin chi tiết khách hàng (word, excel).</h3>
+                            <p>Thông tin chi tiết bao gồm: Họ tên (đầy đủ theo CMND/Hộ chiếu), giới tính, ngày tháng năm sinh, khối lượng hành lý mang theo.</p>
                         </div>
-                        <div class="button">
-                            <img src="./assets/img/modal/upload-cloud.svg" alt="">
-                            <input type="file" class="upload-file" title="" required>
+
+                        <div class="upload-file-input">
+                            <input type="file" hidden id="banner-inner-options-upload-file">
+                            <label for="banner-inner-options-upload-file" class="upload-file-label d-flex">
+                                <i class="bi bi-cloud-arrow-up"></i>
+                                <p>Tải file</p>
+                            </label>
                         </div>
                     </div>
 
-                    <!-- info customer -->
-                    <div class="info-customer">
-                        <h4>Thông tin người đặt vé</h4>
-                        <p>Digiticket sẽ thông báo kết quả theo thông tin liên hệ của người đặt vé</p>
-                        <div class="d-flex">
-                            <div class="field">
-                                <img src="./assets/img/modal/user.svg" alt="" class="icon">
-                                <input type="text" class="customer">
+                    <!-- booking infomation -->
+                    <div class="booking-infomation">
+                        <div class="booking-infomation-text">
+                            <h3>Thông tin người đặt vé</h3>
+                            <p>Digiticket sẽ thông báo kết quả theo thông tin liên hệ người đặt vé</p>
+                        </div>
+
+                        <div class="booking-infomation-fill">
+                            <div class="booking-infomation-wrap">
+                                <i class="bi bi-person"></i>
+                                <input type="text" class="booking-infomation-input" placeholder="Họ và tên">
                             </div>
-                            <div class="filed">
-                                <img src="./assets/img/modal/mail.svg" alt="">
-                                <input type="text" class="customer">
+                            <div class="booking-infomation-wrap">
+                                <i class="bi bi-envelope"></i>
+                                <input type="text" class="booking-infomation-input" placeholder="Email">
                             </div>
-                            <div class="filed">
-                                <img src="./assets/img/modal/Vector.svg" alt="">
-                                <input type="text" class="customer">
+                            <div class="booking-infomation-wrap">
+                                <i class="bi bi-telephone"></i>
+                                <input type="text" class="booking-infomation-input" placeholder="SĐT" >
                             </div>
                         </div>
+                    </div>
+
+                       <!-- checkbox request -->
+                    <div class="request">  
+                        <h3>Các yêu cầu đặc biệt</h3>
+                        <div class="request-wrap">
+                            <input type="checkbox" class="request-checkbox" >
+                            <p>Ưu tiên chọn vé giá rẻ</p>
+                        </div>
+                        <div class="request-wrap">
+                            <input type="checkbox" class="request-checkbox" >
+                            <p>Ưu tiên chọn những chuyến cất cánh sớm nhất</p>
+                        </div>
+                        <div class="request-wrap">
+                            <input type="checkbox" class="request-checkbox" >
+                            <p>Ưu tiên chọn những chuyến bay thẳng, ít chặng nghỉ</p>
+                        </div>
+                        
+                        <div class="request-text">
+                            <input type="text" placeholder="Nhập thêm yêu cầu khác của bạn">
+                        </div>
+                    </div>
+
+                    <!-- Book ticket -->
+                    <div class="book-ticket">
+                        <button class="selection-button">
+                            <a href="#" class="link">
+                                Đặt vé
+                            </a>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/mobile.js"></script>
     <script src="./assets/js/config.js"></script>
