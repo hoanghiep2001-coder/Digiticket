@@ -12,9 +12,6 @@ $(function () {
                 maxYear: parseInt(moment().format('YYYY'),10)
               });
         },
-        dateRangePicker: function() {
-            
-        },
         start: function (param) {
             this.config()
         }
