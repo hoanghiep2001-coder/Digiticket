@@ -2,23 +2,18 @@ const bannerOptions = document.querySelectorAll(".js-banner-options");
 const bannerOptionsDropdown = document.querySelectorAll('.banner-options-dropdown')
 const dropDownList = document.querySelectorAll('.dropdown-list')
 const htmll = document.querySelector('html')
-
 const body = document.querySelector(".body");
 
 // header dropdown
 const headerBar = document.querySelector('.header__subnav-container-bars')
 const headerSubnav = document.querySelector('.js-open-subnav')
-
 const checkForm = document.querySelector('.js-check-button')
 const openCheckForm = document.querySelector('.js-check-form')
 
 // banner
 const bannerSelectionButtons = document.querySelectorAll('.banner-selection-button')
-
-// Validate
-const validateForm = document.querySelectorAll('input[name="validate"]')
-const excuteNot0 = document.querySelectorAll('.d-none.not-0')
-const excuteNotInsert = document.querySelectorAll('.d-none.not-insert')
+const bannerTripForms = document.querySelectorAll('.form-options')
+const modalAiports = document.querySelectorAll('.modal-airport')
 
 // products
 const productPage1 = document.querySelector('.products-page1')
@@ -31,13 +26,15 @@ const flyKindNames = document.querySelectorAll('.company-kindFly')
 // special places
 const specialrow = document.querySelector('.body__container-special-row')
 
+
 // modal
 const modal = document.querySelector('.js-modal')
 const modalBody = document.querySelector('.js-modal-body')
 const modalOverlay = document.querySelector('.modal__overlay')
 const closeModalButton = document.querySelector('.js-close-modal')
-const openModalButton = document.querySelector('.js-open-modal')
+const openModalButtons = document.querySelectorAll('.js-open-modal')
 const modalSelectionButtons = document.querySelectorAll('.modal-selection-button')
+const modalForms = document.querySelectorAll('.modal-form')
 
 var app = {
   from: [
@@ -46,65 +43,31 @@ var app = {
       desc: "DAD - Da Nang Airport",
     },
     {
-      cityName: "Đà Nẵng, Việt Nam",
-      desc: "DAD - Da Nang Airport",
+      cityName: "Hà Nội, Việt Nam",
+      desc: "HAN - Ha Noi Airport",
     },
     {
       cityName: "Đà Nẵng, Việt Nam",
       desc: "DAD - Da Nang Airport",
     },
     {
-      cityName: "Đà Nẵng, Việt Nam",
+      cityName: "Tokyo, Nhật Bản",
+      desc: "JPN - NASSAN Airport",
+    },
+    {
+      cityName: "DuBai, Việt Nam",
+      desc: "HAN - Ha Noi Airport",
+    },
+    {
+      cityName: "Long Biên, Việt Nam",
       desc: "DAD - Da Nang Airport",
     },
     {
-      cityName: "Đà Nẵng, Việt Nam",
-      desc: "DAD - Da Nang Airport",
+      cityName: "Hà Nội, Việt Nam",
+      desc: "HAN - Ha Noi Airport",
     },
     {
-      cityName: "Đà Nẵng, Việt Nam",
-      desc: "DAD - Da Nang Airport",
-    },
-    {
-      cityName: "Đà Nẵng, Việt Nam",
-      desc: "DAD - Da Nang Airport",
-    },
-    {
-      cityName: "Đà Nẵng, Việt Nam",
-      desc: "DAD - Da Nang Airport",
-    },
-  ],
-  to: [
-    {
-      cityName: "Đà Nẵng, Việt Nam",
-      desc: "DAD - Da Nang Airport",
-    },
-    {
-      cityName: "Đà Nẵng, Việt Nam",
-      desc: "DAD - Da Nang Airport",
-    },
-    {
-      cityName: "Đà Nẵng, Việt Nam",
-      desc: "DAD - Da Nang Airport",
-    },
-    {
-      cityName: "Đà Nẵng, Việt Nam",
-      desc: "DAD - Da Nang Airport",
-    },
-    {
-      cityName: "Đà Nẵng, Việt Nam",
-      desc: "DAD - Da Nang Airport",
-    },
-    {
-      cityName: "Đà Nẵng, Việt Nam",
-      desc: "DAD - Da Nang Airport",
-    },
-    {
-      cityName: "Đà Nẵng, Việt Nam",
-      desc: "DAD - Da Nang Airport",
-    },
-    {
-      cityName: "Đà Nẵng, Việt Nam",
+      cityName: "Tây Hồ, Việt Nam",
       desc: "DAD - Da Nang Airport",
     },
   ],
@@ -270,19 +233,23 @@ var app = {
   },
   handleEvent: function () {
     var _this = this;
+    const dropdownItems = document.querySelectorAll('.dropdown-item') 
+    const dropdownItemsInners = document.querySelectorAll('.dropdown-item h3')
 
     // open subnav khi click vao bar
-    headerBar.onclick = function() {
+    headerBar.onclick = function(e) {
+      e.stopPropagation()
       headerSubnav.classList.add('open')
     }
 
     // click vao button check don hang thi hien ra check form
-    checkForm.onclick = function() {
+    checkForm.onclick = function(e) {
+      e.stopPropagation()
       openCheckForm.classList.add('open')
     }
 
     // ket thuc cac su kien open dropdown, open form...
-      body.onclick = function() {
+      htmll.onclick = function() {
         headerSubnav.classList.remove('open')
         openCheckForm.classList.remove('open')
       }
@@ -312,12 +279,17 @@ var app = {
     });
 
     // active banner button
-    bannerSelectionButtons.forEach(item => {
+    bannerSelectionButtons.forEach((item,index) => {
+      const bannerTripForm = bannerTripForms[index]
       item.onclick = function() {
         const activeButton = document.querySelector('.banner-selection-button.active')
+        const activeForm = document.querySelector('.form-options.active')
 
         activeButton.classList.remove('active')
+        activeForm.classList.remove('active')
+
         this.classList.add('active')
+        bannerTripForm.classList.add('active')
       }
     })
 
@@ -327,50 +299,14 @@ var app = {
       // _this.animatedProduct()
     }
 
-    // validate form khi co value nhap vao
-    validateForm.forEach((item, index) => {
-
-      const error1 = excuteNot0[index]
-      const error2 = excuteNotInsert[index]
-
-      item.onkeypress = function (e) {
-        if (e.code == "Enter") {
-          const formValue = this.value
-          
-          if(formValue == '0') {
-            error1.classList.add('d-block')
-            error2.classList.remove('d-block')
-          } else {
-            error1.classList.remove('d-block')
-          } 
-
-          if(formValue == '') {
-            error2.classList.add('d-block')
-            error1.classList.remove('d-block')
-          } else {
-            error2.classList.remove('d-block')
-          }
-        }
+    // open modal khi click vao Đặt vé cho nhiều người?
+    openModalButtons.forEach(item => {
+      item.onclick = function() {
+        modal.classList.add('open')
       }
     })
-
-    // xoa đuôi đi sau của input file
-    document.addEventListener('DOMContentLoad', myFunction);
- 
-    function myFunction() {
-    const FilePicker = document.querySelector('.upload-file');
-    FilePicker.style.width = "90px";
-    FilePicker.title = ""; // Leave This Empty
-    }
-
-    // open modal khi click vao Đặt vé cho nhiều người?
-    openModalButton.onclick = function() {
-      modal.classList.add('open')
-    }
-
     bannerOptionsDropdown.forEach(item => {
       modalBody.onclick = function(e) {
-        e.stopPropagation()
         item.classList.remove('open')
       }
     })
@@ -384,17 +320,19 @@ var app = {
     }
 
     // click vao button nao thi active button do
-    modalSelectionButtons.forEach(item => {
-
+    modalSelectionButtons.forEach((item,index) => {
+      const modalForm = modalForms[index]
       item.onclick = function () {
         const activeButton = document.querySelector('.modal-selection-button.active')
+        const activeModalForm = document.querySelector('.modal-form.active')
 
         activeButton.classList.remove('active')
+        activeModalForm.classList.remove('active')
+
+        modalForm.classList.add('active')
         this.classList.add('active')
       }
     })
-
-
   },
   renderBannerDropDown() {
     dropDownList.forEach(list => {
@@ -475,47 +413,6 @@ var app = {
     });
     productPage2.innerHTML = productsHtmls.join("")
   },
-  // animatedProduct() {
-  //   const activedPage = document.querySelector('.js-product-page.active')
-  //   const animatedRun = document.querySelectorAll('.animated-toLeft')
-  //   const choose = document.querySelector.bind(document)
-  //   if (activedPage.classList.contains('active')) {
-  //       function loadProduct(ms) {
-  //           return new Promise(function(resolve) {
-  //               setTimeout(resolve, ms);
-  //           });
-  //       }
-  //       loadProduct(400)
-  //       .then(function() {
-  //           choose('.js-animation:first-child').classList.add('animated-toLeft')
-  //           return loadProduct(400)
-  //       })
-  //       .then(function() {
-  //           choose('.js-animation:nth-child(2)').classList.add('animated-toLeft')
-  //           return loadProduct(400)
-  //       })
-  //       .then(function() {
-  //           choose('.js-animation:nth-child(3)').classList.add('animated-toLeft')
-  //           return loadProduct(400)
-  //       })
-  //       .then(function() {
-  //           choose('.js-animation:nth-child(4)').classList.add('animated-toLeft')
-  //           return loadProduct(400)
-  //       })
-  //       .then(function() {
-  //           choose('.js-animation:nth-child(5)').classList.add('animated-toLeft')
-  //           return loadProduct(400)
-  //       })
-  //       .then(function() {
-  //           choose('.js-animation:nth-child(6)').classList.add('animated-toLeft')
-  //           return loadProduct(400)
-  //       }) 
-  //   } else {
-  //     animatedRun.forEach(item => {
-  //       item.classList.remove('.animated-toLeft')
-  //     })
-  //   }
-  // },
   showProductsPage() {
     productsRow.forEach(item => {
       if (item.classList.contains('active')) {
@@ -532,3 +429,5 @@ var app = {
 };
 
 app.start();
+
+
