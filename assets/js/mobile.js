@@ -24,13 +24,18 @@ $(function () {
             setInterval(run, 4000)
         },
         handleEvent: function() {
+            $(mobileMenu).slideUp();
             $(mobileBar).click(function (e) { 
                 // e.preventDefault();
                 // $(mobileMenu).toggleClass('open');
                 $(mobileMenu).slideToggle();
             });
 
-            // $('.image-slider').slick();
+            // click vao airport sẽ mở ra modal
+            $('.mobile-open-modal-button').click(function (e) { 
+                e.preventDefault();
+                $('.modal').addClass('open');
+            });
 
             // open button slide
             $(mobileSlides).click(function (e) { 
@@ -77,7 +82,6 @@ $(function () {
             });
 
         },
-
         start: function (param) {
             this.runSlide()
             this.handleEvent()
