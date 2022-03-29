@@ -1,8 +1,4 @@
 $(function () {
-    var dateRangeLeave = $('input[name="birthday"]')
-    var dateRangeBack = $('.date-range-picker-back')
-    var tableCondensed = $('.table-condensed')
-
     let html = $('html')
     let bannerBannerOptions = $('.banner-options-dropdown')
 
@@ -70,6 +66,10 @@ $(function () {
               // done date đầu tiên sẽ xổ ra date thứ 2
               $(calendarTable).change(function (e) { 
                 $(endCalendarTable).trigger("click");
+              });
+
+              $('.modal-calendar-start').change(function (e) { 
+                $('.modal-calendar-end').trigger("click");
               });
         },
         start: function (param) {
