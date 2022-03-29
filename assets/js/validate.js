@@ -82,6 +82,8 @@ $(function () {
         $input.val(_text);
       });
 
+      
+
       // xổ ra options của form em bé
       $.each(babyValues, function (indexInArray, babyValue) {
         let quantityOption = $(quantityOptions)[indexInArray];
